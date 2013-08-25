@@ -31,6 +31,6 @@ def decorated_urlresolver(urlresolver, wrapper):
     elif hasattr(urlresolver, 'callback') and urlresolver.callback:
         return url(
             urlresolver._regex,
-            lambda: wrapper(urlresolver.callback),
+            wrapper(urlresolver.callback),
             name=urlresolver.name
         )
